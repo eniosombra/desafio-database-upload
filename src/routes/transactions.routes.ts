@@ -25,13 +25,12 @@ transactionsRouter.get('/', async (request, response) => {
    * de forma mais detalhada.
    */
 
-  /*
   const transactions = await transactionsRepository.find({
-    select: ['id', 'title', 'value', 'type'],
+    // select: ['id', 'title', 'value', 'type'],
     relations: ['category'],
   });
-  */
 
+  /*
   const transactions = await transactionsRepository
     .createQueryBuilder('trs')
     .select([
@@ -44,6 +43,7 @@ transactionsRouter.get('/', async (request, response) => {
     ])
     .innerJoin('trs.category', 'ctg')
     .getMany();
+    */
 
   const balance = await transactionsRepository.getBalance();
 
